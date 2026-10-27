@@ -22,6 +22,16 @@ def product_2():
 
 
 @pytest.fixture
+def product_3():
+    return Product(
+        name="Xiaomi Redmi Note 11",
+        description="1024GB, Синий",
+        price=31000.0,
+        quantity=14,
+    )
+
+
+@pytest.fixture
 def category_1(product_1, product_2):
     return Category(
         name="Смартфоны",
