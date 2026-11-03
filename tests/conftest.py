@@ -1,6 +1,7 @@
 import pytest
 
 from src.categories import Category
+from src.product_iterator import ProductIterator
 from src.products import Product
 
 
@@ -32,10 +33,25 @@ def product_3():
 
 
 @pytest.fixture
-def category_1(product_1, product_2):
+def product_4():
+    return Product(
+        name="Iphone 17 Pro Max",
+        description="1024GB, Белый",
+        price=250000.0,
+        quantity=10,
+    )
+
+
+@pytest.fixture
+def category_1(product_1, product_2, product_3):
     return Category(
         name="Смартфоны",
         description="Смартфоны, как средство не только коммуникации, "
         "но и получения дополнительных функций для удобства жизни",
-        products=[product_1, product_2],
+        products=[product_1, product_2, product_3],
     )
+
+
+@pytest.fixture
+def product_iterator(category_1):
+    return ProductIterator(category_1)
