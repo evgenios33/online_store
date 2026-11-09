@@ -21,8 +21,11 @@ class Category:
         return f"{self.name}, количество продуктов: {product_count} шт.\n"
 
     def add_product(self, product: Product) -> None:
-        self.__products.append(product)
-        Category.product_count += 1
+        if isinstance(product, Product):
+            self.__products.append(product)
+            Category.product_count += 1
+        else:
+            raise TypeError
 
     @property
     def list_products(self) -> list[Product]:
