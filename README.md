@@ -58,7 +58,7 @@ pip install -r requirements.txt
 ### Запуск
 
 ```commandline
-poetry run python -m src.main
+poetry run python -m main
 ```
 
 ## Тестирование:
