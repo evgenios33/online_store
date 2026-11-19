@@ -8,47 +8,32 @@ from src.products import LawnGrass, Product, Smartphone
 @pytest.fixture
 def product_1():
     return Product(
-        name="Samsung Galaxy S23 Ultra",
-        description="256GB, Серый цвет, 200MP камера",
-        price=180000.0,
-        quantity=5,
+        "Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5
     )
 
 
 @pytest.fixture
 def product_2():
-    return Product(
-        name="Iphone 15", description="512GB, Gray space", price=210000.0, quantity=8
-    )
+    return Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
 
 
 @pytest.fixture
 def product_3():
-    return Product(
-        name="Xiaomi Redmi Note 11",
-        description="1024GB, Синий",
-        price=31000.0,
-        quantity=14,
-    )
+    return Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)
 
 
 @pytest.fixture
 def product_4():
-    return Product(
-        name="Iphone 17 Pro Max",
-        description="1024GB, Белый",
-        price=250000.0,
-        quantity=10,
-    )
+    return Product("Iphone 17 Pro Max", "1024GB, Белый", 250000.0, 10)
 
 
 @pytest.fixture
 def category_1(product_1, product_2, product_3):
     return Category(
-        name="Смартфоны",
-        description="Смартфоны, как средство не только коммуникации, "
+        "Смартфоны",
+        "Смартфоны, как средство не только коммуникации, "
         "но и получения дополнительных функций для удобства жизни",
-        products=[product_1, product_2, product_3],
+        [product_1, product_2, product_3],
     )
 
 
